@@ -2,6 +2,8 @@
 
 var through = require('through2');
 var Slack = require('node-slack-upload');
+var fs = require('fs');
+var path = require('path');
 
 function upload(token, config) {
   var slack = new Slack(token);
