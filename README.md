@@ -7,6 +7,10 @@ Gulp plugin to upload files to [Slack](http://slack.com/).
 You will need an API key from [Slack Web API](https://api.slack.com/web).
 
 ```
+var gulp = require('gulp');
+var fs = require('fs');
+var path = require('path');
+
 var slackUpload = require('gulp-slack-upload');
 var slackApiKey = 'xoxo-0123456789-etc';
 

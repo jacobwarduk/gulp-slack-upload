@@ -2,19 +2,16 @@
 
 var through = require('through2');
 var Slack = require('node-slack-upload');
-var fs = require('fs');
-var path = require('path');
+var gutil = require('gulp-util');
 
 function upload(token, config) {
   var slack = new Slack(token);
   
   slack.uploadFile(config, function error(error, data) {
     if (error) {
-      // LOG OUT ERROR
-      console.log('Error: ', error);
+      gutil.log(gutil.colors.red('Error (gulp-slack-upload): ' + error));
     } else {
-      // LOG OUT DETAILS
-      console.log('Success: ', data);
+      gutil.log(gutil.colors.green('Success (gulp-slack-upload): Uploaded ' + data.name));
     }
   });
   
