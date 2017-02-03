@@ -2,6 +2,11 @@
 
 Gulp plugin to upload files to [Slack](http://slack.com/).
 
+## Installation
+```
+npm install --save-dev gulp-slack-upload
+```
+
 ## Usage
 
 You will need an API key from [Slack Web API](https://api.slack.com/web).
