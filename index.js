@@ -7,7 +7,7 @@ var gutil = require('gulp-util');
 function upload(token, config) {
   var slack = new Slack(token);
   
-  slack.uploadFile(config, function error(error, data) {
+  slack.uploadFile(config, function(error, data) {
     if (error) {
       gutil.log(gutil.colors.red('Error (gulp-slack-upload): ' + error));
     } else {
