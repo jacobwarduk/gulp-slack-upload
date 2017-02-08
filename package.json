@@ -4,7 +4,7 @@
   "description": "Upload files to Slack using Gulp",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start"
   },
   "dependencies": {
     "gulp-util": "^3.0.8",
@@ -35,5 +35,15 @@
   "bugs": {
     "url": "https://github.com/jacobwarduk/gulp-slack-upload/issues"
   },
-  "homepage": "https://github.com/jacobwarduk/gulp-slack-upload"
+  "homepage": "https://github.com/jacobwarduk/gulp-slack-upload",
+  "devDependencies": {
+    "jasmine": "^2.5.3",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.4.1",
+    "karma-cli": "^1.0.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-jasmine-matchers": "^3.6.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-requirejs": "^1.1.0"
+  }
 }
