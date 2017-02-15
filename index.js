@@ -6,6 +6,11 @@ var gutil = require('gulp-util');
 var errors = require('./errors');
 
 function upload(token, config) {
+  if (!token || !config) {
+    gutil.log(gutil.colors.red('Error (gulp-slack-upload): token and config arguments are required'));
+    return false;
+  }
+  
   var slack = new Slack(token);
   
   slack.uploadFile(config, function(error, data) {
