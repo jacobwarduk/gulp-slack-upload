@@ -1,5 +1,7 @@
 # gulp-slack-upload
 
+[![NPM](https://nodei.co/npm/gulp-slack-upload.png?compact=true)](https://nodei.co/npm/gulp-slack-upload/)
+
 Gulp plugin to upload files to [Slack](http://slack.com/).
 
 ## Installation

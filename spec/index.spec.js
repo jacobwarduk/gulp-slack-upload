@@ -1,38 +1,54 @@
 'use strict';
 
 var upload = require('../');
-console.log(upload);
+var chalk = {
+  red: jasmine.createSpy(),
+  green: jasmine.createSpy(),
+  orange: jasmine.createSpy()
+};
 
 describe('upload', function() {
-  // Set up in here
+  beforeEach(function() {
+    
+  });
   
   describe('when invoked', function() {
-  
-    it('should confirm both token and config arguments are passed', function() {
-      expect(upload()).toEqual(false);
-      expect(upload(null)).toEqual(false);
-      expect(upload('singleParam')).toEqual(false);
-    });
-  
-    it('should confirm valid token', function() {
-      // Specs in here
+    
+    describe('with invalid arguments', function() {
+      it('should print error message', function() {
+        upload();
+        expect(chalk.red).toHaveBeenCalled();
+      });
       
+      it('should return false', function() {
+        expect(upload()).toEqual(false);
+        expect(upload(null)).toEqual(false);
+        expect(upload('singleParam')).toEqual(false);
+      });
     });
   
-    it('should confirm valid config', function() {
-      // Specs in here
-    });
+    describe('with valid arguments', function() {
+      it('should create a new instance of Slack using token', function() {
+        // Specs in here
+      });
   
-    it('should create a new instance of Slack using token', function() {
-      // Specs in here
+      it('should invoke uploadFile method of slack using config', function() {
+        // Specs in here
+      });
+  
+      it('should call the callback function thingy with error/data', function() {
+    
+      });
+  
+      it('should return through.obj thingy-ma-jiggy', function() {
+    
+      });
+      
+      // should print messages and stuff!
     });
     
-    it('should invoke uploadFile method using config', function() {
-      // Specs in here
-    });
-
-    it('should return through.obj thingy-ma-jiggy', function() {
+    
   
-    });
+    
   });
 });
