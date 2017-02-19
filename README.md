@@ -15,15 +15,12 @@ You will need an API key from [Slack Web API](https://api.slack.com/web).
 
 ```
 var gulp = require('gulp');
-var fs = require('fs');
-var path = require('path');
 
 var slackUpload = require('gulp-slack-upload');
 var slackApiKey = 'xoxo-0123456789-etc';
 
 var slackUploadOptions = {
-    file: fs.createReadStream(path.join(__dirname, 'gulp-build.log')),
-    filetype: 'post',
+    file: 'gulp-build.log',
     title: 'Gulp Build Results',
     initialComment: 'Results for the latest Gulp build',
     channels: '#gulp-builds'

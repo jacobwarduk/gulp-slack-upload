@@ -3,10 +3,15 @@
 var through = require('through2');
 var Slack = require('node-slack-upload');
 var chalk = require('chalk');
+var fs = require('fs');
+var path = require('path');
 var errors = require('./errors');
 
 function upload(token, config) {
   var slack = new Slack(token);
+  
+  config.file = fs.createReadStream(path.join(__dirname, config.file));
+  config.filetype = 'post';
   
   slack.uploadFile(config, function(error, data) {
     if (data && data.ok === true) {
