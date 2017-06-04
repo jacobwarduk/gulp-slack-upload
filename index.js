@@ -3,6 +3,7 @@
 var through = require('through2');
 var Slack = require('node-slack-upload');
 var chalk = require('chalk');
+var gutil = require('gutil');
 var errors = require('./errors');
 
 function upload(token, config) {
@@ -12,20 +13,20 @@ function upload(token, config) {
   }
   
   var slack = new Slack(token);
-  
-  slack.uploadFile(config, function(error, data) {
+
+  slack.uploadFile(config, function (error, data) {
     if (data && data.ok === true) {
-      chalk.green('Success (gulp-slack-upload): Uploaded ' + data.file.name);
+      gutil.log(chalk.green('Success (gulp-slack-upload): Uploaded ' + data.file.name));
     } else if (error) {
-      chalk.red('Error (gulp-slack-upload): ' + errors.hasOwnProperty(error) ? errors[error] : error);
+      gutil.log(chalk.red('Error (gulp-slack-upload): ' + (Object.prototype.hasOwnProperty.call(errors, error) ? errors[error] : error)));
     } else {
-      chalk.orange('Warning (gulp-slack-upload): No valid response');
+      gutil.log(chalk.orange('Warning (gulp-slack-upload): No valid response'));
     }
   });
-  
-  return through.obj(function(file, enc, callback) {
+
+  return through.obj(function (file, enc, callback) {
     return callback();
-  })
+  });
 }
 
 module.exports = upload;
