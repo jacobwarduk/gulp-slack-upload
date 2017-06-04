@@ -1,6 +1,6 @@
 {
   "name": "gulp-slack-upload",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Upload files to Slack using Gulp",
   "main": "index.js",
   "scripts": {
