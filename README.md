@@ -1,7 +1,6 @@
 # gulp-slack-upload
 
-[![NPM](https://nodei.co/npm/gulp-slack-upload.png?compact=true)](https://nodei.co/npm/gulp-slack-upload/)
-[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
+[![npm](https://img.shields.io/npm/dt/gulp-slack-upload.svg)](https://www.npmjs.com/package/gulp-slack-upload) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 
 Gulp plugin to upload files to [Slack](http://slack.com/).
 
